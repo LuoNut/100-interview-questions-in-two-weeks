@@ -11,4 +11,4 @@
  * @author 双越老师
  */
 
-import "./01-algorithm/move-zero"
+import "./01-algorithm/palindrome-number"
