@@ -56,6 +56,11 @@ export function findPalindromeNumber2(n: number): number[] {
   return res
 }  
 
+/**
+ * 查询1 - max 的对称数 (数字取余)
+ * @param n max
+ * @returns number
+ */
 export function findPalindromeNumber3(n: number): number[] {
   let res: number[] = []
   if(n <= 0) return res
@@ -75,4 +80,17 @@ export function findPalindromeNumber3(n: number): number[] {
   return res
 }
 
-console.log(findPalindromeNumber3(200));
+// console.log(findPalindromeNumber3(200));
+
+//性能测试
+console.time('findPalindromeNumber1')
+findPalindromeNumber1(100 * 10000)
+console.timeEnd('findPalindromeNumber1') //403ms
+1
+console.time('findPalindromeNumber2')
+findPalindromeNumber2(100 * 10000)
+console.timeEnd('findPalindromeNumber2')//57ms
+
+console.time('findPalindromeNumber3')
+findPalindromeNumber3(100 * 10000)
+console.timeEnd('findPalindromeNumber3')//36

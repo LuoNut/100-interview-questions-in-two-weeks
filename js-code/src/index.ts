@@ -11,4 +11,4 @@
  * @author 双越老师
  */
 
-import "./01-algorithm/palindrome-number"
+import "./01-algorithm/switch-letter-case"
