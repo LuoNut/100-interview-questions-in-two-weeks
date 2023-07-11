@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function creatPromise(val) {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(val)
+        }, 1000)
+      })
+    }
+
+    (async function() {
+      const p1 = creatPromise(100)
+      const p2 = creatPromise(200)
+      const p3 = creatPromise(300)
+
+      //同时执行
+      // let res1 = await p1
+      // console.log(res1);
+      // let res2 = await p2
+      // console.log(res2);
+      // let res3 = await p3
+      // console.log(res3);
+
+      // let arr = [p1, p2, p3]
+      // Promise.all(arr).then(res => console.log(res))
+      // for await (let res of arr) {
+      //   console.log(res);
+      // }
+
+      //----------------------------分割线-----------------------------
+
+
+      //逐步执行
+      // let res1 = await creatPromise(100)
+      // console.log(res1);
+      // let res2 = await creatPromise(200)
+      // console.log(res2);
+      // let res3 = await creatPromise(300)
+      // console.log(res3);
+
+      let arr = [100, 200, 300]
+
+      for(let num of arr) {
+        const res = await creatPromise(num)
+        console.log(res);
+      }
+
+
+
+    }) ()
+  </script>
+</body>
+</html>
