@@ -38,7 +38,7 @@ export function reverseLinkList(listNode: ILinkListNode): ILinkListNode {
     nextNode = nextNode.next
   }
 
-  //当next为空时，此时curNode尚未设置next
+  //当next为空时，此时curNode尚未设置prev
   curNode!.next = prevNode
   return curNode! 
 
