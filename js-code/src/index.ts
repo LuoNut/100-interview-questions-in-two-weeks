@@ -11,4 +11,6 @@
  * @author 双越老师
  */
 
-import "./03-write-code/get-type"
+import "./03-write-code/dom-traverse"
+
+
