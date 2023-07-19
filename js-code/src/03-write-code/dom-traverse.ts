@@ -27,10 +27,10 @@ function visitNode(n: Node) {
 }
 
 /**
- * 深度遍历
+ * 深度优先遍历 递归
  * @param root root dom node
  */
-function depthFirstTraverse(root: Node) {
+function depthFirstTraverse1(root: Node) {
   visitNode(root)
 
   const childNodes = root.childNodes
@@ -38,10 +38,36 @@ function depthFirstTraverse(root: Node) {
   
   if (childNodes.length) {
     childNodes.forEach( child => {
-      depthFirstTraverse(child)
+      depthFirstTraverse1(child)
     })
   }
 }
+
+/**
+ * 深度优先遍历 栈
+ * @param root root dom node
+ */
+function depthFirstTraverse2(root: Node) {
+  let stack: Node[] = []
+
+  //顶部入栈
+  stack.push(root)
+
+  while(stack.length > 0) {
+    let curNode = stack.pop()
+    if(curNode == null) break
+
+    visitNode(curNode)
+
+    let childNodes = curNode.childNodes
+    if (childNodes.length > 0) {
+      Array.from(childNodes).reverse().forEach(child => stack.push(child))
+    }
+  }
+
+
+}
+
 
 
 /**
@@ -75,4 +101,4 @@ function breadthFirstTraverse(root: Node) {
 const box = document.getElementById('box')
 if (box == null) throw new Error('box is null')
 
-console.info(breadthFirstTraverse(box))
+console.info(depthFirstTraverse2(box))
