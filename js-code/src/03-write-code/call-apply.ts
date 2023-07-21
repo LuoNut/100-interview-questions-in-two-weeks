@@ -32,9 +32,9 @@ Function.prototype.customApply = function(content: any, args: any[] = []) {
   return res
 }
 
-function fn1(this: any, a: number, b: number, c:number) {
-  console.info(this, a, b, c)
-}
+// function fn1(this: any, a: number, b: number, c:number) {
+//   console.info(this, a, b, c)
+// }
 
-//@ts-ignore
-console.info(fn1.customApply({x: 100}, 10, 20, 30));
+// //@ts-ignore
+// console.info(fn1.customApply({x: 100}, 10, 20, 30));
